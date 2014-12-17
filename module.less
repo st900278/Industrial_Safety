@@ -1,0 +1,22 @@
+body#index{
+    div.block{
+        float:left;
+        height:50vh;
+        width:50%;
+    }
+    div.circle{
+        @circleRadius: 300px;
+        position: absolute;
+        width: @circleRadius;
+        height: @circleRadius;
+        border-radius: @circleRadius;
+        
+        top: ~"calc(50% - 150px)";
+        left:~"calc(50% - 150px)";
+        p{
+            line-height: @circleRadius;
+            text-align: center;
+            font-size:36px;
+        }
+    }
+}
