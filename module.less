@@ -1,22 +1,30 @@
 body#index{
+    div{
+        transition: 1s;
+    }
     div.block{
         float:left;
         height:50vh;
         width:50%;
+        div.title{
+            font-size: 48px;
+            text-align:center;
+            padding-top:20%;
+        }
     }
     div.circle{
-        @circleRadius: 300px;
+        @circleRadius: 400px;
         position: absolute;
         width: @circleRadius;
         height: @circleRadius;
         border-radius: @circleRadius;
         
-        top: ~"calc(50% - 150px)";
-        left:~"calc(50% - 150px)";
+        top: ~"calc(50% - 200px)";
+        left:~"calc(50% - 200px)";
         p{
             line-height: @circleRadius;
             text-align: center;
-            font-size:36px;
+            font-size:32px;
         }
     }
 }
