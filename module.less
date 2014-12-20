@@ -1,11 +1,12 @@
 body#index{
     div{
-        transition: 1s;
+       transition: 1s; 
     }
     div.block{
         float:left;
         height:50vh;
         width:50%;
+        
         div.title{
             font-size: 48px;
             text-align:center;
@@ -18,7 +19,7 @@ body#index{
         width: @circleRadius;
         height: @circleRadius;
         border-radius: @circleRadius;
-        
+        z-index: 2;
         top: ~"calc(50% - 200px)";
         left:~"calc(50% - 200px)";
         p{
@@ -27,7 +28,11 @@ body#index{
             font-size:32px;
         }
     }
-    
+    div[data-chosen="formula"]{
+        img{
+            height:5em;
+        }
+    }
     div.box{
         color:black;
     }

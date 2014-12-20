@@ -1,93 +1,176 @@
-<div class="container">
+<div class="container vibration">
     <nav class="nav double-gap-top double-gap-bottom large blue">
         <ul>
             <li>
-                <button>簡介</button>
+                <button data-target="info">簡介</button>
             </li>
             <li>
-                <button>相關法規</button>
+                <button data-target="law">相關法規</button>
             </li>
             <li>
-                <button>相關公式</button>
+                <button data-target="formula">相關公式</button>
             </li>
             <li>
                 <button data-target="check">檢查工具</button>
             </li>
         </ul>
     </nav>
-    <div class="tabs ipad box info hidden" data-chosen="check">
-        <ul role="tablist">
-            <li class="info active" role="tab" aria-controls="#tab1">每日振動暴露時間</li>
-        </ul>
-        <div class="row" id="tab1" role="tabpanel">
-            <div class="yellow box large">
-                <form action="#" method="get">
-                    <fieldset>
-                        <legend>每日振動暴露時間</legend>
-                        <div class="row">
-                            <div class="two fifth padded">
-                                <label>水平及垂直局部振動最大加速度值(m/s2)：</label>
-                            </div>
-                            <div class="one fifth padded">
-                                <select class="unselected">
-                                    <option value="" disabled="" selected="">加速度</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">4</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12以上</option>
-
-                                </select>
-                            </div>
-                            <div class="one fifth padded">
-                                <button class="medium button">GO</button>
-                            </div>
-                            <div class="one fifth padded">
-                                <label></label>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                </form>
-                <br>
-                <span>依「勞工安全衛生設施規則」第302條規定，雇主僱用勞工從事局部振動作業，應使勞工使用防振把手之防振設備外，並應使勞工每日振動暴露時間不超過下表規定之時間：</span>
-                <table class="info responsive">
-                    <thead>
-                        <tr>
-                            <td>每日容許暴露時間</td>
-                            <td>水平及垂直各方向局部振動最大加速度值(m/s2)</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4小時以上，未滿8小時</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>2小時以上，未滿4小時</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>1小時以上，未滿2小時</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>未滿1小時</td>
-                            <td>12</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="yellow box large hidden" data-chosen="info">
+        <p>
+            振動之危害可以分為對人體的影響及對機械的影響。 振動對人的影響： 在振動的環境下工作，勞工會產生視線模糊、無法平衡及無法集中注意力等現象，而且在某些頻率及振動下，會對人體的內部器官造成永久性傷害。 振動對機器的影響： 機器發生振動，不但會產生噪音，而且會產生疲勞和磨損，引起零件的損毀。此外，機器的猛然振動使地基及廠房也會發生振動或共振，導致崩塌或破裂之危險。
 
 
-        </div>
+        </p>
+
 
     </div>
+    <div class="" data-chosen="law">
+        
+    
+    </div>
+
+    <div class="yellow box large hidden" data-chosen="formula">
+        <div class="tabs ipad box yellow">
+            振動位準(vibration level)與聲壓級或聲壓位準一樣，都是以對數尺度來定義，單位為分貝(dB)。振動位準因參數不同，可以分成五種位準表示法。
+            <br>
+            <ul role="tablist">
+                <li role="tab" aria-controls="#form-tab1">振動能量位準</li>
+                <li role="tab" aria-controls="#form-tab2">振動位移位準</li>
+                <li role="tab" aria-controls="#form-tab3">振動速度位準</li>
+                <li role="tab" aria-controls="#form-tab4">振動加速度位準</li>
+                <li role="tab" aria-controls="#form-tab5">振動力位準</li>
+            </ul>
+            <div class="row" id="form-tab1" role="tabpanel">
+                <img src="src/ch18/1.png">
+            </div>
+            <div class="row" id="form-tab2" role="tabpanel">
+                <img src="src/ch18/2.png">
+            </div>
+            <div class="row" id="form-tab3" role="tabpanel">
+                <img src="src/ch18/3.png">
+            </div>
+            <div class="row" id="form-tab4" role="tabpanel">
+                <img src="src/ch18/4.png">
+            </div>
+            <div class="row" id="form-tab5" role="tabpanel">
+                <img src="src/ch18/5.png">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="yellow box large hidden" data-chosen="check">
+        <form action="#" method="get">
+            <fieldset>
+                <legend>每日振動暴露時間</legend>
+                <div class="row">
+                    <div class="two sixth padded">
+                        <label>水平及垂直局部振動最大加速度值：</label>
+                    </div>
+                    <div class="one sixth padded">
+                        <select class="unselected" id="accerlate">
+                            <option value="" disabled="" selected="">加速度(m/s2)</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12以上</option>
+
+                        </select>
+                    </div>
+                    <div class="one sixth padded">
+                        <button class="info button" id="getResult">GO</button>
+                    </div>
+                    <div class="two sixth padded">
+                        <label id="result"></label>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+        <br>
+        <span>依「勞工安全衛生設施規則」第302條規定，雇主僱用勞工從事局部振動作業，應使勞工使用防振把手之防振設備外，並應使勞工每日振動暴露時間不超過下表規定之時間：</span>
+        <table class="info responsive">
+            <thead>
+                <tr>
+                    <td>每日容許暴露時間</td>
+                    <td>水平及垂直各方向局部振動最大加速度值(m/s2)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4小時以上，未滿8小時</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2小時以上，未滿4小時</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>1小時以上，未滿2小時</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>未滿1小時</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
 </div>
+
+<script type="text/javascript">
+    var lastChosen = "";
+    var btn = document.querySelectorAll("div.vibration nav button");
+    for (var j = 0; j < btn.length; j++) {
+        btn[j].addEventListener('click', function () {
+            if (lastChosen != "") {
+                document.querySelector("div[data-chosen=" + lastChosen + "]").className += " hidden";
+            }
+            var target = this.getAttribute("data-target");
+            var query = "div[data-chosen=" + target + "]";
+            var className = document.querySelector("div[data-chosen=" + target + "]").className;
+            var spl = className.split(" ");
+            lastChosen = target;
+            spl = _.without(spl, 'hidden');
+            document.querySelector("div[data-chosen=" + target + "]").className = spl.join(" ");
+            if (target == "formula") {
+                document.querySelector("li[aria-controls='#form-tab1']").click();
+            }
+        });
+    }
+    document.getElementById("getResult").addEventListener('click', function () {
+        var result = parseInt(document.querySelector("select#accerlate").value);
+        var re = document.getElementById('result');
+        if(result >= 12){
+            re.innerHTML = "未滿1小時";
+        }
+        else if(result >= 8){
+            re.innerHTML = "1小時以上，未滿2小時";
+        }
+        else if(result >= 6){
+            re.innerHTML = "2小時以上，未滿4小時";
+        }
+        else if(result >= 4){
+            re.innerHTML = "4小時以上，未滿8小時";
+        }
+        else{
+            re.innerHTML = "8小時以上";
+        }
+    });
+</script>
+
+
+
+
+
+
