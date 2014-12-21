@@ -23,13 +23,13 @@ for (var i = 0; i < blocks.length; i++) {
         case "animated block blue-bg bounceInDown":
             this.className = "main info-bg";
             this.style.bottom = "0px";
-            xhr.open("GET", "light.html");
+            //xhr.open("GET", "light.html");
             break;
         case "animated block pink-bg bounceInRight":
             this.className = "main error-bg";
             this.style.bottom = "0px";
             this.style.right = "0px";
-            xhr.open("GET", "temperature.html");
+            //xhr.open("GET", "temperature.html");
             break;
         }
         xhr.send("");
