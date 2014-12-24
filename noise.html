@@ -79,10 +79,7 @@
         <div class="tabs ipad box info hidden" data-chosen="formula">
             <ul role="tablist">
                 <li class="info active" role="tab" aria-controls="#formula-tab1">聲音強度</li>
-                <li class="info" role="tab" aria-controls="#formula-tab2">聲音強度</li>
-                <li class="info" role="tab" aria-controls="#formula-tab3">聲音強度</li>
-                <li class="info" role="tab" aria-controls="#formula-tab4">聲音強度</li>
-                <li class="info" role="tab" aria-controls="#formula-tab5">聲音強度</li>
+                <li class="info" role="tab" aria-controls="#formula-tab2"> Leq</li>
             </ul>
             <div class="row" id="formula-tab1" role="tabpanel">
                 <div class="purple box large">
@@ -107,7 +104,25 @@
 
             </div>
             <div class="row" id="formula-tab2" role="tabpanel">
-            
+                <div class="purple box large">
+                    <div class="alert box gapped">
+                        <span>SEL：把單一噪音的能量，換算為一秒的累積能量，然後計算其音壓級</span><br>
+                    <img src="src/ch17/6.png" style="height:4em"><br>
+                    </div>
+                    <div class="alert box gapped">
+                        <span>噪音暴露劑量</span><br>
+                    <img src="src/ch17/7.png" style="height:6em"><br>
+                    </div>
+                    <div class="alert box gapped">
+                        <span>若有n個音壓值，其總和的SPL值</span><br>
+                    <img src="src/ch17/8.png" style="height:2em"><br>
+                    </div>
+                    <div class="alert box gapped">
+                        <span>計算音壓級時，加入”距離”的考量
+(R 為觀測處與機台間的距離，單位為公尺；r 為機台尺寸，分作大、中、小三種，其r值分別為 r = 0.15, 0.3, 1 m)</span><br>
+                    <img src="src/ch17/9.png" style="height:2em"><br>
+                    </div>
+                </div>
             
             </div>
 
@@ -117,14 +132,19 @@
                 <li class="info active" role="tab" aria-controls="#check-tab1">LEG</li>
             </ul>
             <div class="row" id="check-tab1" role="tabpanel">
-                <div class="one fourth align-center">變動性噪音的均能音量</div>
-                <div class="one skip-two fourth align-center"><button>新增</button></div>
-
+                <div class="row">
+                <div class="one fourth">變動性噪音的均能音量</div>
+                <div class="one skip-two fourth align-center"><button id="add-sound">新增</button></div>
+                
+                </div>
+                <div class="row sound">
+                    <div class="one fourth"><input type="text" class="volume"></div>
+                </div>
+                <div id="volumeResult"></div>
             </div>
-            <div class="row">
-                <div class="one fourth"><input type="text"></div>
-            </div>
-            <button>Submit</button>
+            
+            <button id="getVolume">Submit</button>
+            
         </div>
     </div>
 
@@ -153,6 +173,20 @@
                 }
             });
         }
+        document.getElementById('add-sound').addEventListener('click', function(){
+            $('div.sound').append('<div class="one fourth"><input type="text" class="volume"></div>');
+        });
+        
+        document.getElementById("getVolume").addEventListener('click', function(){
+            var vol = document.querySelectorAll('div.sound input.volume');
+            var ans=0;
+            for(var i=0;i<vol.length;i++){
+                ans += Math.pow(10, parseFloat(vol[i].value)/10);
+            }
+            ans = ans/vol.length;
+            ans = 10* (Math.log(ans)/Math.LN10);
+            document.getElementById('volumeResult').innerHTML = '<p class="message success gapped ">Leq: '  + ans + '(dB)</p>';
+        });
     </script>
 
     <script type="text/javascript" src="lesscss.js"></script>
