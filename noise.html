@@ -79,25 +79,33 @@
         <div class="tabs ipad box info hidden" data-chosen="formula">
             <ul role="tablist">
                 <li class="info active" role="tab" aria-controls="#formula-tab1">聲音強度</li>
-                <li class="info" role="tab" aria-controls="#formula-tab2"> Leq</li>
+                <li class="info" role="tab" aria-controls="#formula-tab2">Leq</li>
             </ul>
             <div class="row" id="formula-tab1" role="tabpanel">
                 <div class="purple box large">
                     <div class="alert box gapped">
-                    <span>每單位時間之內，通過垂直於行進方向上每單位面積的聲波能量</span><br>
-                    <img src="src/ch17/1.png" style="height:2em"><br>
+                        <span>每單位時間之內，通過垂直於行進方向上每單位面積的聲波能量</span>
+                        <br>
+                        <img src="src/ch17/1.png" style="height:2em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
-                    <span>美國貝爾實驗室提出以對數方式來比較聲音強度，並稱之為「聲音強度位準」或「聲音強度級」</span><br>
-                    <img src="src/ch17/2.png" style="height:6em"><br>
+                        <span>美國貝爾實驗室提出以對數方式來比較聲音強度，並稱之為「聲音強度位準」或「聲音強度級」</span>
+                        <br>
+                        <img src="src/ch17/2.png" style="height:6em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
-                    <span>另種比較法，稱為「聲音功率位準」或「聲音功率級」</span><br>
-                    <img src="src/ch17/3.png" style="height:6em"><br>
+                        <span>另種比較法，稱為「聲音功率位準」或「聲音功率級」</span>
+                        <br>
+                        <img src="src/ch17/3.png" style="height:6em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
-                    <span>將聲音強度位準轉換為以音壓為計算量，稱之為「音壓位準」或「音壓級」</span><br>
-                    <img src="src/ch17/4.png" style="height:6em"><br>
+                        <span>將聲音強度位準轉換為以音壓為計算量，稱之為「音壓位準」或「音壓級」</span>
+                        <br>
+                        <img src="src/ch17/4.png" style="height:6em">
+                        <br>
                     </div>
                 </div>
 
@@ -106,45 +114,99 @@
             <div class="row" id="formula-tab2" role="tabpanel">
                 <div class="purple box large">
                     <div class="alert box gapped">
-                        <span>SEL：把單一噪音的能量，換算為一秒的累積能量，然後計算其音壓級</span><br>
-                    <img src="src/ch17/6.png" style="height:4em"><br>
+                        <span>SEL：把單一噪音的能量，換算為一秒的累積能量，然後計算其音壓級</span>
+                        <br>
+                        <img src="src/ch17/6.png" style="height:4em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
-                        <span>噪音暴露劑量</span><br>
-                    <img src="src/ch17/7.png" style="height:6em"><br>
+                        <span>噪音暴露劑量</span>
+                        <br>
+                        <img src="src/ch17/7.png" style="height:6em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
-                        <span>若有n個音壓值，其總和的SPL值</span><br>
-                    <img src="src/ch17/8.png" style="height:2em"><br>
+                        <span>若有n個音壓值，其總和的SPL值</span>
+                        <br>
+                        <img src="src/ch17/8.png" style="height:2em">
+                        <br>
                     </div>
                     <div class="alert box gapped">
                         <span>計算音壓級時，加入”距離”的考量
-(R 為觀測處與機台間的距離，單位為公尺；r 為機台尺寸，分作大、中、小三種，其r值分別為 r = 0.15, 0.3, 1 m)</span><br>
-                    <img src="src/ch17/9.png" style="height:2em"><br>
+(R 為觀測處與機台間的距離，單位為公尺；r 為機台尺寸，分作大、中、小三種，其r值分別為 r = 0.15, 0.3, 1 m)</span>
+                        <br>
+                        <img src="src/ch17/9.png" style="height:2em">
+                        <br>
                     </div>
                 </div>
-            
+
             </div>
 
         </div>
         <div class="tabs ipad box info hidden" data-chosen="check">
             <ul role="tablist">
                 <li class="info active" role="tab" aria-controls="#check-tab1">LEG</li>
+                <li class="info" role="tab" aria-controls="#check-tab2">噪音暴露劑量</li>
             </ul>
             <div class="row" id="check-tab1" role="tabpanel">
                 <div class="row">
-                <div class="one fourth">變動性噪音的均能音量</div>
-                <div class="one skip-two fourth align-center"><button id="add-sound">新增</button></div>
-                
+                    <div class="one fourth">變動性噪音的均能音量</div>
+                    <div class="one skip-two fourth align-center">
+                        <button id="add-sound">新增</button>
+                    </div>
+
                 </div>
                 <div class="row sound">
-                    <div class="row"><input type="text" class="volume"></div>
+                    <div class="row">
+                        <input type="text" class="volume">
+                    </div>
                 </div>
                 <div id="volumeResult"></div>
+                <button id="getVolume">Submit</button>
             </div>
-            
-            <button id="getVolume">Submit</button>
-            
+            <div class="row" id="check-tab2" role="tabpanel">
+                <div class="row">        
+                    <div class="padded one skip-seven eighth">
+                        <button id="add-work">Add</button>
+                    </div>
+                </div>
+                <div class="row addWork">
+                    <div class="one fifth align-center">
+                        <label>時間長短(小時)：</label>
+                    </div>
+                    <div class="one fifth">
+                        <input type="text" class="time">
+                    </div>
+                    <div class="one fifth align-center">
+                        <label>音壓</label>
+                    </div>
+                    <div class="one fifth">
+                        <select class="dB">
+                            <option value="8">90 dB</option>
+                            <option value="6">92 dB</option>
+                            <option value="4">95 dB</option>
+                            <option value="3">97 dB</option>
+                            <option value="2">100 dB</option>
+                            <option value="1">105 dB</option>
+                            <option value="0.5">110 dB</option>
+                            <option value="0.25">115 dB</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row padded" id="getTime">
+                    <button>查詢</button>
+                </div>
+                <div class="row padded" id="resultVol">
+                    
+                </div>
+
+
+
+
+
+            </div>
+
+
         </div>
     </div>
 
@@ -173,19 +235,61 @@
                 }
             });
         }
-        document.getElementById('add-sound').addEventListener('click', function(){
+        document.getElementById('add-sound').addEventListener('click', function () {
             $('div.sound').append('<div class="row"><input type="text" class="volume"></div><br>');
         });
-        
-        document.getElementById("getVolume").addEventListener('click', function(){
+
+        document.getElementById("getVolume").addEventListener('click', function () {
             var vol = document.querySelectorAll('div.sound input.volume');
-            var ans=0;
-            for(var i=0;i<vol.length;i++){
-                ans += Math.pow(10, parseFloat(vol[i].value)/10);
+            var ans = 0;
+            for (var i = 0; i < vol.length; i++) {
+                ans += Math.pow(10, parseFloat(vol[i].value) / 10);
             }
-            ans = ans/vol.length;
-            ans = 10* (Math.log(ans)/Math.LN10);
-            document.getElementById('volumeResult').innerHTML = '<p class="message success gapped ">Leq: '  + ans + '(dB)</p>';
+            ans = ans / vol.length;
+            ans = 10 * (Math.log(ans) / Math.LN10);
+            document.getElementById('volumeResult').innerHTML = '<p class="message success gapped ">Leq: ' + ans + '(dB)</p>';
+        });
+        document.getElementById('add-work').addEventListener('click', function(){
+            var addData = '<div class="row addWork">\
+                    <div class="one fifth align-center">\
+                        <label>時間長短(小時)：</label>\
+                    </div>\
+                    <div class="one fifth">\
+                        <input type="text" class="time">\
+                    </div>\
+                    <div class="one fifth align-center">\
+                        <label>音壓</label>\
+                    </div>\
+                    <div class="one fifth">\
+                        <select class="dB">\
+                            <option value="8">90 dB</option>\
+                            <option value="6">92 dB</option>\
+                            <option value="4">95 dB</option>\
+                            <option value="3">97 dB</option>\
+                            <option value="2">100 dB</option>\
+                            <option value="1">105 dB</option>\
+                            <option value="0.5">110 dB</option>\
+                            <option value="0.25">115 dB</option>\
+                        </select>\
+                    </div>\
+                </div>';
+            $('#getTime').before(addData);
+        });
+        document.getElementById('getTime').addEventListener('click', function(){
+            var all = document.querySelectorAll('div.addWork');
+            var test = 0;
+            for(var i=0;i<all.length;i++){
+                var time = all[i].querySelector('input.time').value;
+                var dB = all[i].querySelector('select.dB').value;
+                test += parseFloat(time)/parseFloat(dB);
+            
+            }
+            if(test < 1){
+                document.getElementById('resultVol').innerHTML = '<p class="message success gapped ">音壓符合</p>';
+            }
+            else{
+                document.getElementById('resultVol').innerHTML = '<p class="message error gapped ">音壓不符合<br>第300條 雇主對於發生噪音之工作場所，應依下列規定辦理：<br>一、 勞工工作場所因機械設備所發生之聲音超過九十分貝時，雇主應採取工程控制、減少勞工噪音暴露時間，使勞工噪音暴露工作日八小時日時量平均不超過(一)表列之規定值或相當之劑量值，且任何時間不得暴露於峰值超過一百四十分貝之衝擊性噪音或一百十五分貝之連續性噪音；對於勞工八小時日時量平均音壓級超過八十五分貝或暴露劑量超過百分之五十時，雇主應使勞工戴用有效之耳塞、耳罩等防音防護具。</p>';
+            }
         });
     </script>
 
