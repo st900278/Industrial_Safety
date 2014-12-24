@@ -1,199 +1,380 @@
-<div class="container temperature">
-    <nav class="nav double-gap-top double-gap-bottom large blue">
-        <ul>
-            <li>
-                <button data-target="info">簡介</button>
-            </li>
-            <li>
-                <button data-target="law">相關法規</button>
-            </li>
-            <li>
-                <button data-target="formula">相關公式</button>
-            </li>
-            <li>
-                <button data-target="check">檢查工具</button>
-            </li>
-        </ul>
-    </nav>
-    <div class="" data-chosen="info"></div>
-    <div class="" data-chosen="law"></div>
+<!DOCTYPE html>
+<html>
 
-    <div class="tabs ipad box info hidden" data-chosen="formula">
-        <ul role="tablist">
-            <li class="info active" role="tab" aria-controls="#formula-tab1">每日振動暴露時間</li>
-        </ul>
-        <div class="row" id="formula-tab1" role="tabpanel">
-            <div class="yellow box large">
-                <form action="#" method="get">
-                    <fieldset>
-                        <legend>每日振動暴露時間</legend>
-                        <div class="row">
-                            <div class="two fifth padded">
-                                <label>水平及垂直局部振動最大加速度值(m/s2)：</label>
-                            </div>
-                            <div class="one fifth padded">
-                                <select class="unselected">
-                                    <option value="" disabled="" selected="">加速度</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">4</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12以上</option>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="groundwork/css/groundwork.css">
+    <link rel="stylesheet" type="text/less" href="module.less">
+    <script type="text/javascript" src="groundwork/js/libs/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="groundwork/js/libs/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
 
-                                </select>
-                            </div>
-                            <div class="one fifth padded">
-                                <button class="medium button">GO</button>
-                            </div>
-                            <div class="one fifth padded">
-                                <label></label>
-                            </div>
-                        </div>
-                    </fieldset>
+</head>
 
-                </form>
-                <br>
-                <span>依「勞工安全衛生設施規則」第302條規定，雇主僱用勞工從事局部振動作業，應使勞工使用防振把手之防振設備外，並應使勞工每日振動暴露時間不超過下表規定之時間：</span>
-                <table class="info responsive">
-                    <thead>
-                        <tr>
-                            <td>每日容許暴露時間</td>
-                            <td>水平及垂直各方向局部振動最大加速度值(m/s2)</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4小時以上，未滿8小時</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>2小時以上，未滿4小時</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>1小時以上，未滿2小時</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>未滿1小時</td>
-                            <td>12</td>
-                        </tr>
-                    </tbody>
-                </table>
+<body id="temperature" class="error-bg">
+    <div class="container temperature">
+        <nav class="nav double-gap-top double-gap-bottom large blue">
+            <ul>
+                <li class="active">
+                    <button data-target="info">簡介</button>
+                </li>
+                <li>
+                    <button data-target="law">相關法規</button>
+                </li>
+                <li>
+                    <button data-target="formula">相關公式</button>
+                </li>
+                <li>
+                    <button data-target="check">檢查工具</button>
+                </li>
+                <li>
+                    <button data-target="back">返回</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="yellow box large" data-chosen="info">
+            <div class="tabs ipad box yellow">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#form-tab1">一般簡介</li>
+                    <li role="tab" aria-controls="#form-tab2">高溫誘發之疾病</li>
+                    <li role="tab" aria-controls="#form-tab3">熱暴露而誘發之疾病</li>
+                    <li role="tab" aria-controls="#form-tab4">綜合溫度熱指數量測設備</li>
+                    <li role="tab" aria-controls="#form-tab5">熱舒適性的定義</li>
+                </ul>
+                <div class="row" id="form-tab1" role="tabpanel">
+                    一般鋼鐵、玻璃、陶瓷、鋁冶煉、鑄造等高溫作業產業，常能提供民眾日常生活所需之產品，但由於高溫熱量而使員工身處於高危害之環境。為了防止高溫作業所引起之危害，我國勞工安全衛生法對於高溫作業場所之勞工，特別規範其作息時間標準，明定該場所之每日工作時間不得超過六小時及在特定的綜合溫度指數（Wet Bulb Globe Temperature, WBGT）之下，從事輕、中度、重工作時，實際作業及休息時間應有一定之配合如表1所示，在此標準中所稱輕工作，指僅以坐姿或立姿進行手臂部動作以操縱機器者；所稱中度工作，止於走動中 提舉或推動一般重量物體者；所稱重工作，只鏟、掘、推等全身運動之工作者。在高溫作業環境下，人體必須藉著排汗來促進體熱之排除，避免體熱增加而使體溫上升；若在該環境工作，則不只是要應付環境熱，同時要設法排除工作本身產生之代謝熱，此時熱調節機能及心臟血液循環系統必須更為有效，否則心跳和體溫會持續上升而危及生命，因此，高溫作業之下，必須對環境熱壓力、工作負荷及員工生理反應同時兼顧。
+
+                </div>
+                <div class="row" id="form-tab2" role="tabpanel">
+                    <ul>
+                        <li>熱衰竭是因大腦皮質血液供應不足造成的一種虛脫狀態。為維持人體之恆定性，人體遭受熱危害而使血管擴張所致。</li>
+                        <li>熱痙攣是一種隨意肌引起的痙攣，這種現象係發生於血內氯化鈉濃度過低所引起的。氯化鈉大量損失的原因是由於出汗過多所致；喝大量的水，亦會把餘存於體內的鹽分稀釋。</li>
+                        <li>
+                            中暑乃因平均體溫高至危及若干生命組織繼續發揮功能所致,其顯示體溫調節機制嚴重失能而無法適當的維持熱平衡。一般中暑有三大主要症候：
+                            <ul>
+                                <li>皮膚熱而乾、發紅、有雜色斑點或呈現淺藍色。</li>
+                                <li>體溫常高到41℃或以上，並有繼續上升之勢。</li>
+                                <li>患者有精神錯亂、譫妄、神志衰失、驚厥和昏迷現象。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row" id="form-tab3" role="tabpanel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="10%">健康危害</th>
+                                <th>原因</th>
+                                <th>症狀或徵候</th>
+                                <th>急救處理</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>熱痙攣</td>
+                                <td>大量流汗，致使鹽分過度流失。</td>
+                                <td>肌肉疼痛性的痙攣，體溫仍正常或稍低。</td>
+                                <td>適當休息，給予生理食鹽水。輕微按摩痙攣部位。</td>
+                            </tr>
+                            <tr>
+                                <td>熱衰竭</td>
+                                <td>心血管功能不足，大量失水(脫水)引起虛脫現象。</td>
+                                <td>極度疲勞、頭痛、臉色蒼白、眩暈、心跳快而弱，體溫正常或稍高，失去知覺。</td>
+                                <td>陰涼且通風場所休息，採頭低腳高姿勢仰臥，按摩四肢，並注意體溫及生命現象。</td>
+                            </tr>
+                            <tr>
+                                <td>熱中暑</td>
+                                <td>體溫調節機制失能，無法維持體溫平衡。</td>
+                                <td>通常停止流汗，皮膚乾熱、潮紅，體溫急劇昇高，脈博快而強烈。</td>
+                                <td>利用冰水或酒精擦拭或浸泡，迅速降低體溫，必要時脫去衣物，但要注意維持體溫並送醫急救處理。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row" id="form-tab4" role="tabpanel">
+                    <img src="src/ch20/utility.jpg">
+                </div>
+                <div class="row" id="form-tab5" role="tabpanel">
+                    可以讓一個人的感到滿意的熱環境。由於人的 感覺涉及主觀因素，欲以量化方式評估熱舒適性，勢必需要使用統計方法將主觀 感覺與相關生理反應建立經驗關係。熱環境指標(Thermal Environmental Index) 即是用以評估人體在不同溫度下配合其他環境因素的冷熱感覺或生理反應。現行 熱環境指標不下數十種之多。基本上，這些指標都是將數個影響冷熱感覺或生理 反應的參數綜合於一變數，此變數即為指標。為保護其作業勞工之安全與衛生， 已有甚多文獻推薦不同方法用來評估勞工熱暴露劑量之指標。文獻中常用之熱環境評估指標有：
+                    <br>
+                    <br>綜合溫度熱指標(WBGT)
+                    <br>
+                    <img src="src/ch20/1.png">
+                    <br>其中Tnw 為自然濕球溫度，Tna為自 然乾球溫度，Tg則為黑球溫度。綜合溫度熱指數被美國職業安全衛生 研究所(NIOSH)、美國政府工業衛生專業人員協會(ACGIH)、國際標準組織(ISO)、 美國職業安全衛生署(OSHA)、美國工業安全衛生協會(AIHA)等建議採用之標準規範，亦為我國現行法規採用之評估方法。
+                </div>
             </div>
 
 
         </div>
 
-    </div>
-    <div class="tabs ipad box info hidden" data-chosen="check">
-        <ul role="tablist">
-            <li class="info active" role="tab" aria-controls="#check-tab1">每日振動暴露時間</li>
-        </ul>
-        <div class="row" id="check-tab1" role="tabpanel">
-            <div class="yellow box large">
-                <form action="#" method="get">
-                    <fieldset>
-                        <legend>每日振動暴露時間</legend>
-                        <div class="row">
-                            <div class="two fifth padded">
-                                <label>水平及垂直局部振動最大加速度值(m/s2)：</label>
-                            </div>
-                            <div class="one fifth padded">
-                                <select class="unselected">
-                                    <option value="" disabled="" selected="">加速度</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">4</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12以上</option>
+        <div class="yellow box large hidden" data-chosen="law">
+            <div class="box white">
+                <div class="row padded">
+                    高溫場所工作勞工，不得使其每日工作時間超過六小時；異常 高溫場所工作勞工，不得使其每日工作時間超過六小時；異常氣壓作業、高架作業、精密作業、重體力勞動或其他對勞工具 氣壓作業、高架作業、精密作業、重體力勞動或其他對勞工具有特殊危害之作業，亦應規定減少勞工工作時間，並在工作時 有特殊危害之作業，亦應規定減少勞工工作時間，並在工作時間中予以適當之休息。
 
-                                </select>
-                            </div>
-                            <div class="one fifth padded">
-                                <button class="medium button">GO</button>
-                            </div>
-                            <div class="one fifth padded">
-                                <label></label>
-                            </div>
-                        </div>
-                    </fieldset>
+                </div>
+                <div class="row padded">
+                    (第6條) 雇主對於勞工工作作場所之採光照明，應依下列規定辦理： 勞工於操作中須接近黑球溫度五十度以上高溫灼熱物體者，雇主應供給身體熱防護設備並使勞工確實使用。前項黑球溫度之測定位置為勞工工作時之位置。
+                    <br>
+                    <br>(第6-1條) 雇主對於首次從事高溫作業之勞工，應規劃適當之熱適應期間，並採取必 要措施，以增加其生理機能調適能力。
+                    <br>
+                    <br>(第9條) 雇主使勞工從事高溫作業時，應充分供應飲用水及食鹽，並採取指導勞工 避免高溫作業危害之必要措施。
 
-                </form>
-                <br>
-                <span>依「勞工安全衛生設施規則」第302條規定，雇主僱用勞工從事局部振動作業，應使勞工使用防振把手之防振設備外，並應使勞工每日振動暴露時間不超過下表規定之時間：</span>
-                <table class="info responsive">
-                    <thead>
-                        <tr>
-                            <td>每日容許暴露時間</td>
-                            <td>水平及垂直各方向局部振動最大加速度值(m/s2)</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4小時以上，未滿8小時</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>2小時以上，未滿4小時</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>1小時以上，未滿2小時</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>未滿1小時</td>
-                            <td>12</td>
-                        </tr>
-                    </tbody>
-                </table>
+                </div>
+
+
             </div>
-
 
         </div>
 
-    </div>
-</div>
+        <div class="yellow box large hidden" data-chosen="formula">
+            <div class="tabs ipad box yellow">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#form-tab1">WBGT</li>
+                    <li role="tab" aria-controls="#form-tab2">時量平均綜合溫度熱指數</li>
+                </ul>
+                <div class="row" id="form-tab1" role="tabpanel">
+                    <span>無日曬</span>
+                    <br>
+                    <img src="src/ch20/1.png">
+                    <br>
+                    <br>
+                    <span>有日曬</span>
+                    <br>
+                    <img src="src/ch20/2.png">
+                </div>
+                <div class="row" id="form-tab2" role="tabpanel">
+                    <img src="src/ch20/3.png" style="height:6em">
+                </div>
+            </div>
+        </div>
 
-<script type="text/javascript">
-    var btn = document.querySelectorAll("div.vibration nav button");
-    for (var j = 0; j < btn.length; j++) {
-        btn[j].addEventListener('click', function () {
-            
-            var target = this.getAttribute("data-target");
-            var query = "div[data-chosen=" + target + "]";
-            var className = document.querySelector("div[data-chosen=" + target + "]").className;
-            var spl = className.split(" ");
-            spl = _.without(spl, 'hidden');
-            document.querySelector("div[data-chosen=" + target + "]").className = spl.join(" ");
-            console.log(target + "::" + className);
-            if (target == "check") {
-                document.querySelector("li[aria-controls='#check-tab1']").click();
-            }
-            else if(target == "formula"){
-                document.querySelector("li[aria-controls='#formula-tab1']").click();
-            }
+
+        <div class="yellow box large hidden" data-chosen="check">
+            <div class="tabs ipad box yellow">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#tool-tab1">WBGT</li>
+                    <li role="tab" aria-controls="#tool-tab2">高溫作業</li>
+                </ul>
+                <div class="row" id="tool-tab1" role="tabpanel">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <legend>WBGT</legend>
+                            <div class="row">
+                                有日曬：
+                            </div>
+                            <div class="row">
+                                <div class="one eighth align-center padded">
+                                    <span>0.7 X </span>
+                                </div>
+                                <div class="one eighth">
+                                    <input type="text" class="wet" placeholder="濕球溫度">
+                                </div>
+                                <div class="one eighth  align-center padded">
+                                    <span> + 0.2 X </span>
+                                </div>
+                                <div class="one eighth">
+                                    <input type="text" class="black" placeholder="黑球溫度">
+                                </div>
+                                <div class="one eighth  align-center padded">
+                                    <span> + 0.1 X </span>
+                                </div>
+                                <div class="one eighth">
+                                    <input type="text" class="dry" placeholder="乾球溫度">
+                                </div>
+                                <div class="one eighth">
+                                    <button id="getWbgt-sun">GO</button>
+                                </div>
+                                <div class="one eighth">
+                                    <label id="wbgt-sun"></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                無日曬：
+                            </div>
+                            <div class="row">
+                                <div class="one eighth align-center padded">
+                                    <span>0.7 X </span>
+                                </div>
+                                <div class="one eighth">
+                                    <input type="text" class="wet" placeholder="濕球溫度">
+                                </div>
+                                <div class="one eighth  align-center padded">
+                                    <span> + 0.3 X </span>
+                                </div>
+                                <div class="one eighth">
+                                    <input type="text" class="black" placeholder="黑球溫度">
+                                </div>
+
+                                <div class="one eighth skip-two">
+                                    <button id="getWbgt-nosun">GO</button>
+                                </div>
+                                <div class="one eighth">
+                                    <label id="wbgt-nosun">fewf</label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </form>
+                </div>
+                <div class="row" id="tool-tab2" role="tabpanel">
+                    <div class="row">
+                        <div class="padded four eighth">
+                            <label class="inline">Radio Buttons:</label>
+                            <input type="radio" id="light" checked>
+                            <label class="inline">輕工作</label>
+                            <input type="radio" id="medium">
+                            <label class="inline">中工作</label>
+                            <input type="radio" id="hard">
+                            <label class="inline">重工作</label>
+                        </div>
+                        <div class="padded one skip-three eighth">
+                            <button id="add-work">Add</button>
+                        </div>
+                    </div>
+                    <div class="row addWork">
+                        <div class="one fifth">
+                            <select>
+                                <option value="work">工作</option>
+                                <option value="rest">休息</option>
+                            </select>
+                        </div>
+                        <div class="one fifth align-center">
+                            <label>時間長短(分鐘)：</label>
+                        </div>
+                        <div class="one fifth">
+                            <input type="text" class="time">
+                        </div>
+                        <div class="one fifth align-center">
+                            <label>WBGT &deg;C：</label>
+                        </div>
+                        <div class="one fifth">
+                            <input type="text" class="temp">
+                        </div>
+
+                    </div>
+                    <div class="row padded" id="getTime">
+                    <button>查詢</button>
+                    </div>
+                    <div class="row padded" id="resultTemp">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var formatFloat = function (num, pos) {
+            var size = Math.pow(10, pos);
+            return Math.round(num * size) / size;
+        }
+
+        var lastChosen = "info";
+        var btn = document.querySelectorAll("div.temperature nav button");
+        for (var j = 0; j < btn.length; j++) {
+            btn[j].addEventListener('click', function () {
+                if (lastChosen != "") {
+                    document.querySelector("div[data-chosen='" + lastChosen + "']").className += " hidden";
+                }
+
+                var target = this.getAttribute("data-target");
+                if (target == "back") {
+                    window.location.href = "./index.html";
+                } else {
+                    var query = "div[data-chosen=" + target + "]";
+                    var className = document.querySelector("div[data-chosen=" + target + "]").className;
+                    var spl = className.split(" ");
+                    lastChosen = target;
+                    spl = _.without(spl, 'hidden');
+                    document.querySelector("div[data-chosen=" + target + "]").className = spl.join(" ");
+                    if (target == "formula") {
+                        document.querySelector("li[aria-controls='#form-tab1']").click();
+                    }
+                }
+            });
+        }
+        document.getElementById("getWbgt-sun").addEventListener('click', function (e) {
+            e.preventDefault();
+            var parent = this.parentNode.parentNode;
+            var answer = 0;
+
+            document.getElementById('wbgt-sun').innerHTML = formatFloat(parseFloat(parent.querySelector(".wet").value) * 0.7 + parseFloat(parent.querySelector(".black").value) * 0.2 + parseFloat(parent.querySelector(".dry").value) * 0.1, 3);
         });
-    }
-</script>
+        document.getElementById("getWbgt-nosun").addEventListener('click', function (e) {
+            e.preventDefault();
+            var parent = this.parentNode.parentNode;
+            var answer = 0;
+            document.getElementById('wbgt-nosun').innerHTML = formatFloat(parseFloat(parent.querySelector(".wet").value) * 0.7 + parseFloat(parent.querySelector(".black").value) * 0.3, 3);
+        });
+        
+        document.getElementById("add-work").addEventListener('click', function(e){
+            e.preventDefault();
+            var addData = '<div class="row addWork">\
+                        <div class="one fifth">\
+                            <select>\
+                                <option value="work">工作</option>\
+                                <option value="rest">休息</option>\
+                            </select>\
+                        </div>\
+                        <div class="one fifth align-center">\
+                            <label>時間長短(分鐘)：</label>\
+                        </div>\
+                        <div class="one fifth">\
+                            <input type="text" class="time">\
+                        </div>\
+                        <div class="one fifth align-center">\
+                            <label>WBGT &deg;C：</label>\
+                        </div>\
+                        <div class="one fifth">\
+                            <input type="text" class="temp">\
+                        </div>\
+                    </div>';
+            $("#getTime").before(addData);
+        });
+        document.getElementById('getTime').addEventListener('click', function(){
+            var checked = document.getElementById('tool-tab2').querySelector('input[type="radio"]:checked').id;
+            
+            
+            var select = document.querySelectorAll('div.addWork select');
+            var workTime = 0;
+            var restTime = 0;
+            var total = 0;
+            for(var i=0;i<select.length;i++){
+                var parent = select[i].parentNode.parentNode;
+                if(select[i].value == "work"){
+                    workTime += parseFloat(parent.querySelector('input.time').value);
+                    total += parseFloat(parent.querySelector('input.time').value) * parseFloat(parent.querySelector('input.temp').value);
+                }
+                else{
+                    restTime += parseFloat(parent.querySelector('input.time').value)
+                    total += parseFloat(parent.querySelector('input.time').value) * parseFloat(parent.querySelector('input.temp').value);
+                }
+            }
+            var wb = formatFloat(total/(workTime+restTime),3);
+            var ans = 0;
+            if(checked == "light"){
+                if(restTime == 0){
+                    if(wb > 30.6)ans = 0;
+                    else ans = 1;
+                }
+                else if(workTime/restTime >= 0.75){
+                }
+                else if(workTime/restTime >= 0.5){
+                }
+                else{
+                }
+            }
+            if(ans == 0){
+                document.getElementById('resultTemp').innerHTML = '<p class="message error dismissable">不符合 算出熱指數為' + wb +'&deg;C</p>';
+            }
+            else{
+                document.getElementById('resultTemp').innerHTML = '<p class="message success dismissable">符合</p>';
+            }
+            
+        });
+    </script>
+    <script type="text/javascript" src="lesscss.js"></script>
+    <script type="text/javascript" src="groundwork/js/groundwork.all.js"></script>
+</body>
 
-
-
-
-
-
+</html>

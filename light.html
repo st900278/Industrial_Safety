@@ -1,196 +1,281 @@
-<!--<div class="container light">
-    <nav class="nav double-gap-top double-gap-bottom large blue">
-        <ul>
-            <li class="active">
-                <button data-target="info">簡介</button>
-            </li>
-            <li>
-                <button data-target="law">相關法規</button>
-            </li>
-            <li>
-                <button data-target="formula">相關公式</button>
-            </li>
-            <li>
-                <button data-target="check">檢查工具</button>
-            </li>
-        </ul>
-    </nav>
-    <div class="yellow box large" data-chosen="info">
-        <div class="box info">
-            <div class="row">
-                振動之危害可以分為對人體的影響及對機械的影響。
-            </div>
-            <br>
-            <div class="row">
-                振動對人的影響： 在振動的環境下工作，勞工會產生視線模糊、無法平衡及無法集中注意力等現象，而且在某些頻率及振動下，會對人體的內部器官造成永久性傷害。 振動對機器的影響： 機器發生振動，不但會產生噪音，而且會產生疲勞和磨損，引起零件的損毀。此外，機器的猛然振動使地基及廠房也會發生振動或共振，導致崩塌或破裂之危險。
-            </div>
-            <div class="row">
-                振幅之數學表示:
-                
-            </div>
+<!DOCTYPE html>
+<html>
 
-            </p>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="groundwork/css/groundwork.css">
+    <link rel="stylesheet" type="text/less" href="module.less">
+    <script type="text/javascript" src="groundwork/js/libs/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="groundwork/js/libs/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
 
+</head>
 
-        </div>
-    </div>
-    <div class="yellow box large hidden" data-chosen="law">
-        <div class="box info">
-            <div class="row">
-                雇主僱用勞工從事振動作業，應使勞工每天全身振動暴露時間不超過下列各款之規定： 垂直振動三分之一八音度頻帶中心頻率（單位為赫、Hz）之加速度（單位為每平方秒公尺、m/s2），不得超過表一規定之容許時間。 水平振動三分之一八音度頻帶中心頻率之加速度，不得超過表二規定之容許時間。
-
-            </div>
-            <div class="row">
-                
-            </div>
-
-            </p>
-
-
-        </div>
-
-    </div>
-
-    <div class="yellow box large hidden" data-chosen="formula">
-        <div class="tabs ipad box yellow">
-            振動位準(vibration level)與聲壓級或聲壓位準一樣，都是以對數尺度來定義，單位為分貝(dB)。振動位準因參數不同，可以分成五種位準表示法。
-            <br>
-            <ul role="tablist">
-                <li role="tab" aria-controls="#form-tab1">振動能量位準</li>
-                <li role="tab" aria-controls="#form-tab2">振動位移位準</li>
-                <li role="tab" aria-controls="#form-tab3">振動速度位準</li>
-                <li role="tab" aria-controls="#form-tab4">振動加速度位準</li>
-                <li role="tab" aria-controls="#form-tab5">振動力位準</li>
+<body id="light" class="info-bg">
+    <div class="container light">
+        <nav class="nav double-gap-top double-gap-bottom large blue">
+            <ul>
+                <li class="active">
+                    <button data-target="info">簡介</button>
+                </li>
+                <li>
+                    <button data-target="law">相關法規</button>
+                </li>
+                <li>
+                    <button data-target="formula">相關公式</button>
+                </li>
+                <li>
+                    <button data-target="check">檢查工具</button>
+                </li>
+                <li>
+                    <button data-target="back">返回</button>
+                </li>
             </ul>
-            <div class="row" id="form-tab1" role="tabpanel">
-                <img src="src/ch18/1.png">
-            </div>
-            <div class="row" id="form-tab2" role="tabpanel">
-                <img src="src/ch18/2.png">
-            </div>
-            <div class="row" id="form-tab3" role="tabpanel">
-                <img src="src/ch18/3.png">
-            </div>
-            <div class="row" id="form-tab4" role="tabpanel">
-                <img src="src/ch18/4.png">
-            </div>
-            <div class="row" id="form-tab5" role="tabpanel">
-                <img src="src/ch18/5.png">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="yellow box large hidden" data-chosen="check">
-        <form action="#" method="get">
-            <fieldset>
-                <legend>每日振動暴露時間</legend>
-                <div class="row">
-                    <div class="two sixth padded">
-                        <label>水平及垂直局部振動最大加速度值：</label>
-                    </div>
-                    <div class="one sixth padded">
-                        <select class="unselected" id="accerlate">
-                            <option value="" disabled="" selected="">加速度(m/s2)</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12以上</option>
-
-                        </select>
-                    </div>
-                    <div class="one sixth padded">
-                        <button class="info button" id="getResult">GO</button>
-                    </div>
-                    <div class="two sixth padded">
-                        <label id="result"></label>
+        </nav>
+        <div class="blue box large" data-chosen="info">
+            <div class="tabs ipad">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#info-tab1">基礎知識</li>
+                    <li role="tab" aria-controls="#info-tab2">照度</li>
+                    <li role="tab" aria-controls="#info-tab3">光度</li>
+                    <li role="tab" aria-controls="#info-tab4">亮度</li>
+                </ul>
+                <div id="info-tab1" role="tabpanel">
+                    <div class="row">
+                        光在真空中速度為3x10^8(m/s)。
+                        <br>光波頻率f 與其波長λ有以下關係：
+                        <br>
+                        <img src="src/ch19/frequency.png">
                     </div>
                 </div>
-            </fieldset>
+                <div id="info-tab2" role="tabpanel">
+                    照度（英語：Illuminance）:是每單位面積所接收到的光通量。SI制單位是勒克斯 (lx=lux)，1(勒克斯)=1(流明/平方公尺) 。 我們平常所說的桌面夠不夠亮，就是指照度。居家的一般照度建議在100~300勒克斯之間。 一些日常的代表性照度：
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>環境</th>
+                                <th>照度 (單位:lux)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>烈日</td>
+                                <td>100,000</td>
+                            </tr>
+                            <tr>
+                                <td>陰天</td>
+                                <td>8,000</td>
+                            </tr>
+                            <tr>
+                                <td>繪圖</td>
+                                <td>600</td>
+                            </tr>
+                            <tr>
+                                <td>閱讀</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>夜間棒球場</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td>辦公室/教室</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>路燈</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>滿月</td>
+                                <td>0.2</td>
+                            </tr>
+                            <tr>
+                                <td>星光</td>
+                                <td>0.0003</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        </form>
-        <br>
-        <span>依「勞工安全衛生設施規則」第302條規定，雇主僱用勞工從事局部振動作業，應使勞工使用防振把手之防振設備外，並應使勞工每日振動暴露時間不超過下表規定之時間：</span>
-        <table class="info responsive">
-            <thead>
-                <tr>
-                    <td>每日容許暴露時間</td>
-                    <td>水平及垂直各方向局部振動最大加速度值(m/s2)</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>4小時以上，未滿8小時</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>2小時以上，未滿4小時</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>1小時以上，未滿2小時</td>
-                    <td>8</td>
-                </tr>
-                <tr>
-                    <td>未滿1小時</td>
-                    <td>12</td>
-                </tr>
-            </tbody>
-        </table>
+                </div>
+                <div id="info-tab3" role="tabpanel">
+
+                    發光強度 （Luminous intensity），簡稱光強。用於表示光源給定方向上單位立體角內發光強弱程度的物理量，國際單位為燭光，符號：cd，以前又稱坎德拉。 與通常測量輻射強度或測量能量強度的單位相比較，發光強度的定義考慮人的視覺因素和光學特點，是在人的視覺基礎上建立起來的。
+
+                </div>
+                <div id="info-tab4" role="tabpanel">
+
+                    亮度（luminance）是表示人對發光體或被照射物體表面的發光或反射光強度實際感受的物理量，亮度和光強這兩個量在一般的日常用語中往往被混淆使用。 國際單位制中規定，亮度的符號是L，單位為尼特（nits）。
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="blue box large hidden" data-chosen="law">
+            <div class="box info">
+                <div class="row padded">
+                    (第313條) 雇主對於勞工工作作場所之採光照明，應依下列規定辦理：
+                    <ol class="list">
+                        <li class="ordered list item">各工作場所須有充分之光線，但處理感光材料、坑內及其他特殊作業之工作場所不在此限。</li>
+                        <li class="ordered list item">光線應分佈均勻，明暗比並應適當。</li>
+                        <li class="ordered list item">應避免光線之刺目、眩耀現象。</li>
+                        <li class="ordered list item">各工作場所之窗面面積比率不得小於室內地面面積十分之一。</li>
+                        <li class="ordered list item">採光以自然採光為原則，但必要時得使用窗簾或遮光物。</li>
+                        <li class="ordered list item">作業場所面積過大、夜間或氣候因素自然採光不足時，可用人工照明。</li>
+                        <li class="ordered list item">燈盞裝置應採用玻璃燈罩及日光燈為原則，燈泡須完全包蔽於玻璃罩中。</li>
+                        <li class="ordered list item">面及照明器具之透光部份，均須保持清潔。</li>
+                    </ol>
+
+                </div>
+                <div class="row padded">
+                    (第314條) 雇主對於下列場所之照明設備，應保持其適當照明，遇有損壞，應即修復：
+                    <ul class="list">
+                        <li>階梯、升降機及出入口。</li>
+                        <li>電氣機械器具操作部份。</li>
+                        <li>高壓電氣、配電盤處。</li>
+                        <li>高度二公尺以上之勞工作業場所。</li>
+                        <li>堆積或拆卸作業場所。</li>
+                        <li>修護鋼軌或行於軌道上之車輛更換，連接作業場所。</li>
+                        <li>其他易因光線不足引起勞工災害之場所。</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="blue box large hidden" data-chosen="formula">
+            <div class="tabs ipad box info">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#form-tab1">照度</li>
+                    <li role="tab" aria-controls="#form-tab2">亮度</li>
+                    <li role="tab" aria-controls="#form-tab3">明暗對比</li>
+                </ul>
+                <div class="row" id="form-tab1" role="tabpanel">
+                    <img src="src/ch19/1.png">
+                </div>
+                <div class="row" id="form-tab2" role="tabpanel">
+                    <img src="src/ch19/2.png">
+                </div>
+                <div class="row" id="form-tab3" role="tabpanel">
+                    <img src="src/ch19/3.png">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="blue box large hidden" data-chosen="check">
+            <div class="tabs ipad box info">
+                <ul role="tablist">
+                    <li role="tab" aria-controls="#check-tab1">人工照明標準</li>
+                </ul>
+                <div class="row" id="check-tab1" role="tabpanel">
+                    <form action="#" method="get">
+                        <fieldset>
+                            <legend>人工照明標準</legend>
+                            <div class="row">
+                                <div class="three fifth padded">
+                                    <label>場所別</label>
+                                    <select class="unselected" id="place">
+                                        <option value="" disabled="" selected="">場所</option>
+                                        <option value="1">室外走道及室外一般照明</option>
+                                        <option value="2">走道、樓梯、倉庫、儲藏室堆置大物件處所</option>
+                                        <option value="3">搬運粗大物件，如煤炭、泥土</option>
+                                        <option value="4">機械及鍋爐房、升降機、裝箱、粗細物件儲藏室、更衣室、盥洗室、廁所</option>
+                                        <option value="5">需粗辨物體，如半完成之鋼鐵產品、配件組合、磨粉、粗紡棉布及其他初步處理之工業製造</option>
+                                        <option value="6">需細辨物體如零件組合、初車床工作、普通檢查及產品試驗</option>
+                                        <option value="7">須精辨物體如細車床、較詳細檢查及精密試驗、分別等級、織布、淺色毛織等</option>
+                                        <option value="8">一般辦公場所</option>
+                                        <option value="9">須極細辨物體，而有較佳之對稱，如精細組合、精細車床、精細檢查、玻璃磨光、精細木工、深色毛織等</option>
+                                        <option value="10">須極精辨物體而對襯不良，如極精細儀器組合、檢查、試驗、鐘錶珠寶之鑲製、菸葉分級、印刷品校對、深色織品、縫製等</option>
+                                    </select>
+                                </div>
+                                <div class="one fifth padded">
+                                    <label>照明米燭光數</label>
+                                    <input type="text" id="light">
+                                </div>
+
+                                <div class="one fifth padded">
+                                    <label>輸出</label>
+                                    <button class="info button getResult">GO</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <br>
+                    <br>
+                    <div class="row result">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
-
-</div>
-
-<script type="text/javascript">
-    var lastChosen = "info";
-    var btn = document.querySelectorAll("div.vibration nav button");
-    for (var j = 0; j < btn.length; j++) {
-        btn[j].addEventListener('click', function () {
-            if (lastChosen != "") {
-                document.querySelector("div[data-chosen=" + lastChosen + "]").className += " hidden";
-            }
-            var target = this.getAttribute("data-target");
-            var query = "div[data-chosen=" + target + "]";
-            var className = document.querySelector("div[data-chosen=" + target + "]").className;
-            var spl = className.split(" ");
-            lastChosen = target;
-            console.log("target:" + target);
-            spl = _.without(spl, 'hidden');
-            document.querySelector("div[data-chosen=" + target + "]").className = spl.join(" ");
-            console.log(spl);
-            if (target == "formula") {
-                document.querySelector("li[aria-controls='#form-tab1']").click();
-            }
-        });
-    }
-    document.getElementById("getResult").addEventListener('click', function () {
-        var result = parseInt(document.querySelector("select#accerlate").value);
-        var re = document.getElementById('result');
-        if (result >= 12) {
-            re.innerHTML = "未滿1小時";
-        } else if (result >= 8) {
-            re.innerHTML = "1小時以上，未滿2小時";
-        } else if (result >= 6) {
-            re.innerHTML = "2小時以上，未滿4小時";
-        } else if (result >= 4) {
-            re.innerHTML = "4小時以上，未滿8小時";
-        } else {
-            re.innerHTML = "8小時以上";
+    <script type="text/javascript">
+        var lastChosen = "info";
+        var btn = document.querySelectorAll("div.light nav button");
+        var table = {
+            "1": [20, 1],
+            "2": [50, 1],
+            "3": [50, 0],
+            "4": [100, 1],
+            "5": [100, 0],
+            "6": [200, 0],
+            "7": [300, 1],
+            "8": [300, 0],
+            "9": [500, 0],
+            "10": [1000, 0]
+        };
+        document.querySelector("li[aria-controls='#info-tab1']").click();
+        document.querySelector("li[aria-controls='#check-tab1']").click();
+        for (var j = 0; j < btn.length; j++) {
+            btn[j].addEventListener('click', function (e) {
+                if (lastChosen != "") {
+                    document.querySelector("div[data-chosen='" + lastChosen + "']").className += " hidden";
+                }
+                var target = this.getAttribute("data-target");
+                if(target == "back"){
+                    window.location.href = "./index.html";
+                }
+                else{
+                    var query = "div[data-chosen=" + target + "]";
+                    var className = document.querySelector("div[data-chosen=" + target + "]").className;
+                    var spl = className.split(" ");
+                    lastChosen = target;
+                    spl = _.without(spl, 'hidden');
+                    document.querySelector("div[data-chosen=" + target + "]").className = spl.join(" ");
+                }
+            });
         }
-    });
-</script>
+        document.querySelector("div#check-tab1 button.getResult").addEventListener('click', function (e) {
+            e.preventDefault();
+            var recommend = table[document.querySelector("div#check-tab1 select").value][0];
+            var rec = table[document.querySelector("div#check-tab1 select").value][1];
+            var light = document.querySelector("div#check-tab1 input#light").value;
+            var result = "";
+            if (recommend >= light) {
+                if (rec == 0)
+                    result = "<p class='message error dismissible'>不合格， 建議" + recommend + "米燭光以上， 採局部照明</p>";
+                else
+                    result = "<p class='message error dismissible'>不合格， 建議" + recommend + "米燭光以上， 採全面照明</p>";
+            } else {
+                if (rec == 0)
+                    result = "<p class='message success dismissible'>合格， 建議" + recommend + "米燭光以上， 採局部照明</p>";
+                else
+                    result = "<p class='message success dismissible'>合格， 建議" + recommend + "米燭光以上， 採全面照明</p>";
+            }
+            document.querySelector("div#check-tab1 div.result").innerHTML = result;
+        });
+    </script>
+    <script type="text/javascript" src="lesscss.js"></script>
+    <script type="text/javascript" src="groundwork/js/groundwork.all.js"></script>
+</body>
+</html>
 
 
-
-
-
--->
