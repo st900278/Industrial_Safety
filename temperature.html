@@ -157,6 +157,7 @@
                     <li role="tab" aria-controls="#tool-tab2">高溫作業</li>
                 </ul>
                 <div class="row" id="tool-tab1" role="tabpanel">
+                    <div class="row large">查詢當下的WBGT：</div>
                     <form action="#" method="post">
                         <fieldset>
                             <legend>WBGT</legend>
@@ -218,14 +219,15 @@
                     </form>
                 </div>
                 <div class="row" id="tool-tab2" role="tabpanel">
+                    <div class="row large">查詢高溫作業，時間分配是否符合：</div>
                     <div class="row">
                         <div class="padded four eighth">
                             <label class="inline">Radio Buttons:</label>
-                            <input type="radio" id="light" checked>
+                            <input type="radio" id="light" name="worklevel" checked>
                             <label class="inline">輕工作</label>
-                            <input type="radio" id="medium">
+                            <input type="radio" id="medium" name="worklevel">
                             <label class="inline">中工作</label>
-                            <input type="radio" id="hard">
+                            <input type="radio" id="hard" name="worklevel">
                             <label class="inline">重工作</label>
                         </div>
                         <div class="padded one skip-three eighth">

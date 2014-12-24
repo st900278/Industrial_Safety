@@ -145,19 +145,23 @@
         </div>
         <div class="tabs ipad box info hidden" data-chosen="check">
             <ul role="tablist">
-                <li class="info active" role="tab" aria-controls="#check-tab1">LEG</li>
-                <li class="info" role="tab" aria-controls="#check-tab2">噪音暴露劑量</li>
+                <li class="info active" role="tab" aria-controls="#check-tab1">均能音量</li>
+                <li class="info" role="tab" aria-controls="#check-tab2">噪音暴露劑量</li>    
             </ul>
             <div class="row" id="check-tab1" role="tabpanel">
                 <div class="row">
-                    <div class="one fourth">變動性噪音的均能音量</div>
-                    <div class="one skip-two fourth align-center">
+                    <div class="two fourth" style="font-size:2em">變動性噪音的均能音量</div>
+                    <div class="one skip-one fourth align-center">
                         <button id="add-sound">新增</button>
                     </div>
 
                 </div>
-                <div class="row sound">
-                    <div class="row">
+                <div class="row" style="font-size:2em">
+                    傳入多個機台的音壓，可算出總共的音壓。
+                
+                </div>
+                <div class="row sound gapped">
+                    <div class="one fourth">
                         <input type="text" class="volume">
                     </div>
                 </div>
@@ -166,7 +170,10 @@
             </div>
             <div class="row" id="check-tab2" role="tabpanel">
                 <div class="row">        
-                    <div class="padded one skip-seven eighth">
+                    <div class="padded five eighth large">
+                        計算工作時的音壓，輸入每個時段的音壓與時間長短
+                    </div>
+                    <div class="padded one skip-two eighth">
                         <button id="add-work">Add</button>
                     </div>
                 </div>
@@ -199,19 +206,16 @@
                 <div class="row padded" id="resultVol">
                     
                 </div>
-
-
-
-
-
             </div>
-
-
         </div>
     </div>
 
     <script type="text/javascript">
         var lastChosen = "info";
+        var formatFloat = function (num, pos) {
+            var size = Math.pow(10, pos);
+            return Math.round(num * size) / size;
+        }
         var btn = document.querySelectorAll("div.noise nav button");
         for (var j = 0; j < btn.length; j++) {
             btn[j].addEventListener('click', function () {
@@ -236,18 +240,18 @@
             });
         }
         document.getElementById('add-sound').addEventListener('click', function () {
-            $('div.sound').append('<div class="row"><input type="text" class="volume"></div><br>');
+            $('#volumeResult').before('<div class="row gapped sound"><div class="one fourth"><input type="text" class="volume"></div></div>');
         });
 
         document.getElementById("getVolume").addEventListener('click', function () {
             var vol = document.querySelectorAll('div.sound input.volume');
             var ans = 0;
+            console.log(vol.length);
             for (var i = 0; i < vol.length; i++) {
                 ans += Math.pow(10, parseFloat(vol[i].value) / 10);
             }
-            ans = ans / vol.length;
             ans = 10 * (Math.log(ans) / Math.LN10);
-            document.getElementById('volumeResult').innerHTML = '<p class="message success gapped ">Leq: ' + ans + '(dB)</p>';
+            document.getElementById('volumeResult').innerHTML = '<p class="message success gapped ">Leq: ' + formatFloat(ans,3) + '(dB)</p>';
         });
         document.getElementById('add-work').addEventListener('click', function(){
             var addData = '<div class="row addWork">\
