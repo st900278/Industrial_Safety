@@ -13,7 +13,7 @@
 
 <body id="noise" class="question-bg">
     <div class="container noise">
-        <nav class="nav double-gap-top double-gap-bottom large blue">
+        <nav class="nav double-gap-top double-gap-bottom large blue animated fadeIn">
             <ul>
                 <li>
                     <button data-target="info">簡介</button>
@@ -32,7 +32,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="yellow box large" data-chosen="info">
+        <div class="yellow box large animated bounceInUp" data-chosen="info">
             <div class="box info">
 
                 <div class="row">
@@ -138,7 +138,7 @@
                 
                 </div>
                 <div class="row sound">
-                    <div class="one fourth"><input type="text" class="volume"></div>
+                    <div class="row"><input type="text" class="volume"></div>
                 </div>
                 <div id="volumeResult"></div>
             </div>
@@ -174,7 +174,7 @@
             });
         }
         document.getElementById('add-sound').addEventListener('click', function(){
-            $('div.sound').append('<div class="one fourth"><input type="text" class="volume"></div>');
+            $('div.sound').append('<div class="row"><input type="text" class="volume"></div><br>');
         });
         
         document.getElementById("getVolume").addEventListener('click', function(){
